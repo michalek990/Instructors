@@ -9,25 +9,20 @@ import com.example.instructors.entity.City;
 import com.example.instructors.entity.Instructor;
 import com.example.instructors.exception.NotFoundException;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class InstructorService {
 
     private final InstructorRepository instructorRepository;
     private final InstructorMapper instructorMapper;
     private final AddressMapper addressMapper;
     private final CityRepository cityRepository;
-
-    public InstructorService(InstructorRepository instructorRepository, InstructorMapper instructorMapper, AddressMapper addressMapper, CityRepository cityRepository) {
-        this.instructorRepository = instructorRepository;
-        this.instructorMapper = instructorMapper;
-        this.addressMapper = addressMapper;
-        this.cityRepository = cityRepository;
-    }
 
     public InstructorResponse createInstructor(InstructorRequest instructorRequest) {
         Instructor instructor = instructorMapper.mapToInstructor(instructorRequest);
