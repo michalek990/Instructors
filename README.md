@@ -12,7 +12,6 @@ Aplikacja "Instructors" to nowoczesne rozwiązanie zaprojektowane do zarządzani
 - **Docker:** Platforma do konteneryzacji aplikacji, ułatwiająca wdrażanie i skalowanie.
 - **Git:** System kontroli wersji służący do śledzenia zmian w kodzie źródłowym.
 
-- 
 ## Endpoints
 
 Lista dostępnych endpointów API wraz z krótkimi opisami:
