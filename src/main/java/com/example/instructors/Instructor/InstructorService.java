@@ -38,7 +38,7 @@ public class InstructorService {
 
     public InstructorResponse getInstructorById(Long instructorId){
         Instructor instructor = instructorRepository.findById(instructorId)
-                .orElseThrow(() -> new EntityNotFoundException("Instructor not found"));
+                .orElseThrow(() -> new NotFoundException("Instructor not found"));
         return instructorMapper.mapToInstructorResponse(instructor);
     }
 
