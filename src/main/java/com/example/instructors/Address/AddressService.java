@@ -3,7 +3,7 @@ package com.example.instructors.Address;
 import com.example.instructors.Address.dto.AddressRequest;
 import com.example.instructors.Address.dto.AddressResponse;
 import com.example.instructors.City.CityRepository;
-import com.example.instructors.entity.Address;
+import com.example.instructors.Entity.Address;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

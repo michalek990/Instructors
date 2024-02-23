@@ -1,4 +1,4 @@
-package com.example.instructors.exception.dto;
+package com.example.instructors.Exception.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

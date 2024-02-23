@@ -1,7 +1,8 @@
-package com.example.instructors.entity;
+package com.example.instructors.Entity;
 
-import com.example.instructors.entity.enums.Role;
+import com.example.instructors.Entity.enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -29,6 +30,10 @@ public class User implements UserDetails {
     @Column(name = "lastname")
     private String lastname;
 
+    @Column(name = "email")
+    @Email
+    private String email;
+
     @Column(name = "username", unique = true)
     private String username;
 
@@ -37,6 +42,13 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role roles;
+
+    @Column(name = "isActive")
+    private boolean active = false;
+
+    @Column(name = "verificationCode")
+    private String verificationCode;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

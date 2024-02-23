@@ -1,4 +1,4 @@
-package com.example.instructors.security.dto;
+package com.example.instructors.Security.dto;
 
 import lombok.*;
 
@@ -12,4 +12,5 @@ public class RegisterRequest {
     private String lastname;
     private String username;
     private String password;
+    private String email;
 }
