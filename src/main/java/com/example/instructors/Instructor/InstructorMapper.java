@@ -2,7 +2,7 @@ package com.example.instructors.Instructor;
 
 import com.example.instructors.Instructor.dto.InstructorRequest;
 import com.example.instructors.Instructor.dto.InstructorResponse;
-import com.example.instructors.entity.Instructor;
+import com.example.instructors.Entity.Instructor;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

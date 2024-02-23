@@ -2,7 +2,7 @@ package com.example.instructors.Country;
 
 import com.example.instructors.Country.dto.CountryRequest;
 import com.example.instructors.Country.dto.CountryResponse;
-import com.example.instructors.entity.Country;
+import com.example.instructors.Entity.Country;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

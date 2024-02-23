@@ -1,4 +1,4 @@
-package com.example.instructors.security.dto;
+package com.example.instructors.Security.dto;
 
 import lombok.*;
 

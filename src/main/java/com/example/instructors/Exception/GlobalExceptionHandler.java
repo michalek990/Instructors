@@ -1,6 +1,6 @@
-package com.example.instructors.exception;
+package com.example.instructors.Exception;
 
-import com.example.instructors.exception.dto.ErrorDetails;
+import com.example.instructors.Exception.dto.ErrorDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
