@@ -43,10 +43,11 @@ public class AuthenticationService {
 
         String subject = "Potwierdzenie rejestracji";
         String content = "Kod weryfikacyjny do potwierdzenia konta: " + verificationCode;
-        emailService.sendVerificationEmail(user.getEmail(), subject, content);
+        //emailService.sendVerificationEmail(user.getEmail(), subject, content);
 
         return AuthenticationResponse.builder()
                 .token(jwtToken)
+                .isActive(false)
                 .build();
     }
 
