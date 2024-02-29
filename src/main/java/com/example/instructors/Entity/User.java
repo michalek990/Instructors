@@ -49,6 +49,11 @@ public class User implements UserDetails {
     @Column(name = "verificationCode")
     private String verificationCode;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Message> messages;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<GymPass> gymPasses;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,6 +1,6 @@
 package com.example.instructors.Security;
 
-import com.example.instructors.Config.EmailService;
+import com.example.instructors.Components.EmailService;
 import com.example.instructors.Entity.User;
 import com.example.instructors.Entity.enums.Role;
 import com.example.instructors.Security.dto.AuthenticationRequest;
