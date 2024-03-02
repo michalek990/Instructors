@@ -22,9 +22,15 @@ INSERT INTO users (id, firstname, lastname, username, email, password, roles, is
                 VALUES (1, 'Michal', 'Kowal', 'user1', 'michalek@gmial.com', '$2a$10$vtVp3J/LlPQ6U/p3QLvFw.8r3/5CgKfUTHh0C0BJj9sT/5JfLqTWC', 'ADMIN', 'true', null),
                        (2, 'Marek', 'Tomaszewicz', 'user2', 'marek@gmial.com', '$2a$10$6zSN4QT5wUqyABYGeNyuUO6bqcQWSiqn5SOo6HEp53sx8kRpM7LIm', 'USER', 'true', null);
 
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (1, 'Marek', 'Zawada', 'michal.grzeszuk.dodat@gmail.com', '123123123');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (2, 'Tomek', 'Mazur', 'michal.grzeszuk.dodat@gmail.com', '321321321');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (3, 'Maria', 'Topola', 'michal.grzeszuk.dodat@gmail.com', '456456456');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (1, 'Marek', 'Zawada', 'marek@gmail.com', '111111111');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (2, 'Tomek', 'Mazur', 'tomek@gmail.com', '222222222');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (3, 'Maria', 'Topola', 'maria@gmail.com', '333333333');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (4, 'Kazimierz', 'Nowak', 'kazio@gmail.com', '444444444');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (5, 'Wacław', 'Wiszniewski', 'waclaw@gmail.com', '555555555');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (6, 'Aleksandra', 'Rompa', 'ola@gmail.com', '666666666');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (7, 'Helena', 'Cieślak', 'helena@gmail.com', '777777777');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (8, 'Jakub', 'Golec', 'jakub@gmail.com', '888888888');
+INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (9, 'Błażej', 'Sęk', 'blazi@gmail.com', '999999999');
 
 INSERT INTO addresses (id, street, number, zipcode, city_id, instructor_id) VALUES (1, 'StreetName1', '11', '11-111', 1, 1);
 INSERT INTO addresses (id, street, number, zipcode, city_id, instructor_id) VALUES (3, 'StreetName3', '13', '31-111', 3, 2);
