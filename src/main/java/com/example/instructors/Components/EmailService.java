@@ -1,7 +1,6 @@
-package com.example.instructors.Config;
+package com.example.instructors.Components;
 
 import lombok.AllArgsConstructor;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class EmailService {
     private final JavaMailSender mailSender;
-    private final ResourceLoader resourceLoader;
 
     public void sendVerificationEmail(String to, String subject, String content) {
         SimpleMailMessage message = new SimpleMailMessage();
