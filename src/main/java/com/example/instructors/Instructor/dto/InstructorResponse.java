@@ -4,7 +4,7 @@ import lombok.*;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class InstructorResponse {
     private String id;
     private String firstName;

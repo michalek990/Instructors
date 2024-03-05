@@ -1,11 +1,13 @@
 package com.example.instructors.Instructor.dto;
 
 import com.example.instructors.Address.dto.AddressRequest;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
 @Getter
+@Setter
+@NoArgsConstructor
 public class InstructorRequest {
     private String firstName;
     private String lastName;
