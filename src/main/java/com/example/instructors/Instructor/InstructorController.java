@@ -25,8 +25,8 @@ public class InstructorController {
 
     @GetMapping("/{id}")
     public ResponseEntity<InstructorResponse> getInstructorById(@PathVariable @Valid Long id){
-        InstructorResponse instructor = instructorService.getInstructorById(id);
-        return ResponseEntity.ok(instructor);
+        InstructorResponse response = instructorService.getInstructorById(id);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/all")
@@ -36,8 +36,8 @@ public class InstructorController {
 
     @PutMapping("/{id}")
     public ResponseEntity<InstructorResponse> updateInstructor(@PathVariable Long id, @RequestBody InstructorRequest instructorRequest){
-        InstructorResponse instructor = instructorService.updateInstructor(id, instructorRequest);
-        return ResponseEntity.ok(instructor);
+        InstructorResponse response = instructorService.updateInstructor(id, instructorRequest);
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id}")
