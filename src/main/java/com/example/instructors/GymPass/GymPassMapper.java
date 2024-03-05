@@ -11,9 +11,6 @@ public interface GymPassMapper {
 
     GymPass mapToGymPass(GymPassRequest gymPassRequest);
 
-    @Mapping(source = "instructor.email", target = "instructorEmail")
-    @Mapping(source = "instructor.firstName", target = "instructorFirstname")
-    @Mapping(source = "instructor.lastName", target = "instructorLastname")
     @Mapping(source = "user.email", target = "userEmail")
     @Mapping(source = "user.firstname", target = "userFirstname")
     @Mapping(source = "user.lastname", target = "userLastname")

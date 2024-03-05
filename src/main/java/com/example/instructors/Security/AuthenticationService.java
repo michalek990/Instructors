@@ -2,7 +2,6 @@ package com.example.instructors.Security;
 
 import com.example.instructors.Components.EmailService;
 import com.example.instructors.Entity.User;
-import com.example.instructors.Entity.enums.Role;
 import com.example.instructors.Security.dto.AuthenticationRequest;
 import com.example.instructors.Security.dto.AuthenticationResponse;
 import com.example.instructors.Security.dto.RegisterRequest;
@@ -35,7 +34,8 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .verificationCode(verificationCode)
                 .active(false)
-                .roles(Role.USER)
+                .roles(request.getRole())
+                .address(request.getAddress())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
         userRepository.save(user);

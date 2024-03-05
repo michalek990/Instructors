@@ -1,5 +1,7 @@
 package com.example.instructors.Security.dto;
 
+import com.example.instructors.Entity.Address;
+import com.example.instructors.Entity.enums.Role;
 import lombok.*;
 
 @Getter
@@ -13,4 +15,6 @@ public class RegisterRequest {
     private String username;
     private String password;
     private String email;
+    private Role role;
+    private Address address;
 }

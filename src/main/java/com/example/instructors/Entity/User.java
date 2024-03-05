@@ -43,6 +43,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role roles;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Address address;
+
     @Column(name = "isActive")
     private boolean active = false;
 

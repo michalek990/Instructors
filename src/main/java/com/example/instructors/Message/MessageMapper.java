@@ -12,6 +12,4 @@ public interface MessageMapper {
     @Mapping(target = "username", source = "user.username")
     @Mapping(target = "email", source = "user.email")
     MessageResponse mapToResponse(Message message);
-
-    Message mapToMessage(MessageRequest messageRequest);
 }

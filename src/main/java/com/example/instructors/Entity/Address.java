@@ -30,6 +30,6 @@ public class Address {
     private City city;
 
     @OneToOne
-    @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
+    @JoinColumn(name = "user_id")
+    private User user;
 }
