@@ -1,34 +1,28 @@
-name: Maven CI/CD
+name: Spring CI
 
 on:
-  push:
-    branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ "main", "develop" ]
 
 jobs:
   build:
+    name: Build and test Spring application
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: 17
-          distribution: 'temurin' 
-
-      - name: Cache Maven packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-m2
-            
-      - name: Build project with Maven
-        run: mvn -B package --file pom.xml -Dskiptests
-
-      - name: Run tests from a specific package
-        run: mvn -B test -Dtest=com.example.instructors.EntityTests
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        java-version: 17
+        distribution: 'temurin'
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-m2
+    - name: Build
+      run: mvn -B package --file pom.xml -DskipTests
+    - name: Test
+      run: mvn test
