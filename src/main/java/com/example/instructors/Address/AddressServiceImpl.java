@@ -24,7 +24,7 @@ public class AddressServiceImpl implements AddressService{
         address.setCity(cityRepository.findById(addressRequest.getCityId())
                 .orElseThrow(() -> new NotFoundException("City not found with id " + addressRequest.getCityId())));
         Address savedAddress = addressRepository.save(address);
-        return addressMapper.mapToAddressResponse(savedAddress);
+        return addressMapper.mapToResponse(savedAddress);
     }
 
     @Override
@@ -38,13 +38,13 @@ public class AddressServiceImpl implements AddressService{
         addressToUpdate.setZipcode(addressRequest.getZipcode());
         addressRepository.save(addressToUpdate);
 
-        return addressMapper.mapToAddressResponse(addressToUpdate);
+        return addressMapper.mapToResponse(addressToUpdate);
     }
 
     @Override
     public Page<AddressResponse> getAllAddresses(Pageable pageable) {
         Page<Address> addresses = addressRepository.findAll(pageable);
-        return addresses.map(addressMapper::mapToAddressResponse);
+        return addresses.map(addressMapper::mapToResponse);
     }
 
     @Override

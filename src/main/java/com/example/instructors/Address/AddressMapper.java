@@ -14,5 +14,5 @@ public interface AddressMapper {
 
     @Mapping(target = "cityId", source = "city.id")
     @Mapping(target = "addressId", source = "id")
-    AddressResponse mapToAddressResponse(Address address);
+    AddressResponse mapToResponse(Address address);
 }

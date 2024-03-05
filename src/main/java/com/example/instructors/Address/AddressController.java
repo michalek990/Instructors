@@ -33,7 +33,7 @@ public class AddressController {
         return ResponseEntity.ok(addressService.getAllAddresses(pageable));
     }
 
-    @DeleteMapping("/{addressId")
+    @DeleteMapping("/{addressId}")
     public ResponseEntity<Void> deleteAddress(Long addressId){
         addressService.deleteAddress(addressId);
         return ResponseEntity.noContent().build();

@@ -15,5 +15,5 @@ public interface InstructorMapper {
     @Mapping(source = "address.zipcode", target = "zipcode")
     @Mapping(source = "address.number", target = "number")
     @Mapping(source = "address.city.name", target = "cityName")
-    InstructorResponse mapToInstructorResponse(Instructor instructor);
+    InstructorResponse mapToResponse(Instructor instructor);
 }

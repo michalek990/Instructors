@@ -33,19 +33,19 @@ public class InstructorService {
         instructor.setAddress(address);
         address.setInstructor(instructor);
         Instructor savedInstructor = instructorRepository.save(instructor);
-        return instructorMapper.mapToInstructorResponse(savedInstructor);
+        return instructorMapper.mapToResponse(savedInstructor);
     }
 
     public InstructorResponse getInstructorById(Long instructorId){
         Instructor instructor = instructorRepository.findById(instructorId)
                 .orElseThrow(() -> new NotFoundException("Instructor not found"));
-        return instructorMapper.mapToInstructorResponse(instructor);
+        return instructorMapper.mapToResponse(instructor);
     }
 
     public List<InstructorResponse> getAllInstructors(){
         return instructorRepository.findAll()
                 .stream()
-                .map(instructorMapper::mapToInstructorResponse)
+                .map(instructorMapper::mapToResponse)
                 .collect(Collectors.toList());
     }
 
@@ -58,7 +58,7 @@ public class InstructorService {
         instructor.setPhoneNumber(instructorRequest.getPhoneNumber());
         Instructor savedInstructor = instructorRepository.save(instructor);
 
-        return instructorMapper.mapToInstructorResponse(instructor);
+        return instructorMapper.mapToResponse(instructor);
     }
 
     public void deleteInstructor(Long instructorId){
