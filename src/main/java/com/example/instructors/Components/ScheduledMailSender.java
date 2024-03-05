@@ -15,7 +15,7 @@ public class ScheduledMailSender {
     private final GymPassRepository gymPassRepository;
     private final EmailService emailService;
 
-    @Scheduled(cron = "* * 9 * * *")
+    @Scheduled(cron = "* * 0 9 * * ")
     public void checkGymPassAndNotify(){
         List<GymPass> endingGymPasses = gymPassRepository.findEndingGymPasses();
         for(GymPass gymPass : endingGymPasses){
