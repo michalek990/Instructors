@@ -13,7 +13,7 @@ public class SimpleTest {
     public void addNumberEqualFour(){
         int a = 2;
         int b = 2;
-        assertEquals("Sum should be 4", 4, a+b);
+        assertEquals("Sum should be 4", 3, a+b);
     }
 
 }
