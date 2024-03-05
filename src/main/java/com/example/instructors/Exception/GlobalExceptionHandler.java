@@ -26,6 +26,28 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<Object> handleForbiddenExcpetion(ForbiddenException ex, WebRequest request){
+        ErrorDetails errorDetails = new ErrorDetails(
+                HttpStatus.FORBIDDEN,
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        logger.error("User unauthorized");
+        return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<Object> handleUnauthorizedException(UnauthorizedException ex, WebRequest request){
+        ErrorDetails errorDetails = new ErrorDetails(
+                HttpStatus.UNAUTHORIZED,
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        logger.error("User is not logged in");
+        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Object> handleNotFoundException(NotFoundException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(
