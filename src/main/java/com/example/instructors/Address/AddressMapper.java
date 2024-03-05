@@ -9,9 +9,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface AddressMapper {
 
-    @Mapping(target = "city", ignore = true) // Ignoruj pole city podczas mapowania
+    @Mapping(target = "city", ignore = true)
     Address mapToAddress(AddressRequest addressRequest);
 
     @Mapping(target = "cityId", source = "city.id")
+    @Mapping(target = "addressId", source = "id")
     AddressResponse mapToAddressResponse(Address address);
 }
