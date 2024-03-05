@@ -28,4 +28,4 @@ jobs:
             ${{ runner.os }}-m2
             
       - name: Build project with Maven
-        run: mvn -B package --file pom.xml -DskipTests
+        run: mvn -B package --file pom.xml -Dtest=com.example.instructors.entitytests.*
