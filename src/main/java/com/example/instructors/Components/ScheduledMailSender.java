@@ -20,7 +20,7 @@ public class ScheduledMailSender {
         List<GymPass> endingGymPasses = gymPassRepository.findEndingGymPasses();
         for(GymPass gymPass : endingGymPasses){
             emailService.sendVerificationEmail(
-                    gymPass.getInstructor().getEmail(),
+                    gymPass.getUser().getEmail(),
                     "Przypomnienie o wygaśnięciu karnetu",
                     "Twój karnet " + gymPass.getType() + " kończy się dzisiaj"
                     );

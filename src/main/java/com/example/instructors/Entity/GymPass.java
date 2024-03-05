@@ -29,10 +29,6 @@ public class GymPass {
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
-
-    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 }

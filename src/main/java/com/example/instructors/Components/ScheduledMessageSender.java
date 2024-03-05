@@ -26,7 +26,7 @@ public class ScheduledMessageSender {
         List<GymPass> endingGymPasses = gymPassRepository.findEndingGymPasses();
         for(GymPass gymPass : endingGymPasses){
             messageService.generateNewMessage(
-                    gymPass.getInstructor().getId(),
+                    gymPass.getUser().getId(),
                     messageRequest
             );
         }
