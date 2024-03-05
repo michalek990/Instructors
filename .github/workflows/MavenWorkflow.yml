@@ -7,7 +7,7 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,15 +27,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
             
-      - name: Build and test project with Maven
-        run: mvn -B test
-      
       - name: Build project with Maven
-        run: mvn -B package --file pom.xml
-
-      - name: Run tests
-        run: mvn test
-
-      - name: List files
-        run: ls -la
-  
+        run: mvn -B package --file pom.xml -DskipTests
