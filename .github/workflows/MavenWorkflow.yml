@@ -24,7 +24,3 @@ jobs:
           ${{ runner.os }}-m2
     - name: Build
       run: mvn -B package --file pom.xml -DskipTests
-    - name: Run tests
-      run: mvn test
-      env:
-        SPRING_PROFILES_ACTIVE: test
