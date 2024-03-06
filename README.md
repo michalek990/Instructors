@@ -25,10 +25,10 @@ Lista dostępnych endpointów API wraz z krótkimi opisami:
 | DELETE /instructors/{id} |  Usuwa instruktora o podanym ID.|
 
 | Security             |Opis                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| GET /instructors | Zwraca listę wszystkich instruktorów. |
-| GET /instructors/{id} | Zwraca szczegółowe informacje o instruktorze o podanym ID. |
-| POST /instructors | Tworzy nowego instruktora z danymi przesłanymi w ciele żądania.|
+| ------------------- | ------------------------------------------------------------------ |
+| POST /auth/register | Zwraca listę wszystkich instruktorów. |
+| POST /auth/login    | Zwraca szczegółowe informacje o instruktorze o podanym ID. |
+| GET /auth/verify    | Tworzy nowego instruktora z danymi przesłanymi w ciele żądania.|
 
 
 
