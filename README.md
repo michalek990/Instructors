@@ -16,19 +16,18 @@ Aplikacja "Instructors" to nowoczesne rozwiązanie zaprojektowane do zarządzani
 
 Lista dostępnych endpointów API wraz z krótkimi opisami:
 
-| Instructors             |Opis                                                                |
+| Address             |Opis                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| GET /instructors | Zwraca listę wszystkich instruktorów. |
-| GET /instructors/{id} | Zwraca szczegółowe informacje o instruktorze o podanym ID. |
-| POST /instructors | Tworzy nowego instruktora z danymi przesłanymi w ciele żądania.|
-| PUT /instructors/{id} | Aktualizuje dane instruktora o podanym ID. |
-| DELETE /instructors/{id} |  Usuwa instruktora o podanym ID.|
+| PUT /addresses/{addressId} | Aktualizauje dane konkretnego adresu. |
+| DELETE /addresses/{addressId} | Usuwa konkretny adres. |
+| POST /addresses | Tworzy nowy adres.|
+| GET /addresses/all | Pobiera wszystkie adresy. |
 
 | Security             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
-| POST /auth/register | Zwraca listę wszystkich instruktorów. |
-| POST /auth/login    | Zwraca szczegółowe informacje o instruktorze o podanym ID. |
-| GET /auth/verify    | Tworzy nowego instruktora z danymi przesłanymi w ciele żądania.|
+| POST /auth/register | Rejestracja nowego użytkownika. |
+| POST /auth/login    | Autentykacja użytkownika do uzyskania dostępów do zasobów i metod. |
+| GET /auth/verify    | Weryfikacja konta nowo stworzonego użytkownika.|
 
 
 
