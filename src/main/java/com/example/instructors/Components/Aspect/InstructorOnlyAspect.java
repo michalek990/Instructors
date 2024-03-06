@@ -12,13 +12,13 @@ import java.util.List;
 @Aspect
 @Component
 @RequiredArgsConstructor
-public class AdminOnlyAspect {
+public class InstructorOnlyAspect {
 
     private final UserService userService;
 
-    @Before("@annotation(AdminOnly)")
-    public void checkAdminRole(){
+    @Before("within(@InstructorOnly *)")
+    public void checkInstructorRole(){
         UserDetails userDetails = userService.getLoggedUser();
-        userService.ensureUserHasRole(userDetails, List.of("ADMIN"));
+        userService.ensureUserHasRole(userDetails, List.of("ADMIN", "INSTRUCTOR"));
     }
 }

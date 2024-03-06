@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AdminOnly
 @RequiredArgsConstructor
 public class CountryServiceImpl implements CountryService {
 
@@ -25,7 +26,6 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    @AdminOnly
     public List<CountryResponse> getAllCountries() {
         return countryRepository.findAll()
                 .stream()

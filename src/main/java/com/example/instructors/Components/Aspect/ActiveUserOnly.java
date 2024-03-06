@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE) // Adnotacja może być stosowana tylko do metod
-@Retention(RetentionPolicy.RUNTIME) // Adnotacja dostępna w czasie działania programu
-public @interface AdminOnly {
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ActiveUserOnly {
 }

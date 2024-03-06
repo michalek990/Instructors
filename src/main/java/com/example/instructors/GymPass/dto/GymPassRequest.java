@@ -14,6 +14,5 @@ public class GymPassRequest {
     private String type;
     private LocalDateTime expireDate;
     private BigDecimal price;
-    private String instructorEmail;
     private String userEmail;
 }

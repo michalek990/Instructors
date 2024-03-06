@@ -2,7 +2,6 @@ DELETE FROM addresses;
 DELETE FROM cities;
 DELETE FROM countries;
 DELETE FROM gym_passes;
-DELETE FROM instructors;
 DELETE FROM messages;
 DELETE FROM users;
 
@@ -20,25 +19,23 @@ INSERT INTO cities (id, name, country_id) VALUES (5,'Lizbona', 5);
 
 INSERT INTO users (id, firstname, lastname, username, email, password, roles, is_active, verification_code)
                 VALUES (1, 'Michal', 'Kowal', 'user1', 'michalek@gmial.com', '$2a$10$vtVp3J/LlPQ6U/p3QLvFw.8r3/5CgKfUTHh0C0BJj9sT/5JfLqTWC', 'ADMIN', 'true', null),
-                       (2, 'Marek', 'Tomaszewicz', 'user2', 'marek@gmial.com', '$2a$10$6zSN4QT5wUqyABYGeNyuUO6bqcQWSiqn5SOo6HEp53sx8kRpM7LIm', 'USER', 'true', null);
+                       (2, 'Marek', 'Tomaszewicz', 'user2', 'marek@gmial.com', '$2a$10$6zSN4QT5wUqyABYGeNyuUO6bqcQWSiqn5SOo6HEp53sx8kRpM7LIm', 'INSTRUCTOR', 'true', null),
+                       (3, 'Marek', 'Zawada','user3', 'marek2@gmail.com', '$2a$10$lGHDSwBq8bNayguc4Mp9Kui2ndrdb5rMdQvBze1f40G9dswJVA6IG', 'INSTRUCTOR', 'true', null),
+                       (4, 'Tomek', 'Mazur','user4', 'tomek@gmail.com', '$2a$10$4A2pz2NuoAXVJBJ3jNV8Xu56jiX/o.0vUnbSZmx/tFmzVpNhAacra', 'USER', 'true', null),
+                       (5, 'Maria', 'Topola','user5', 'maria@gmail.com', '$2a$10$EIZQ7yFirOqBpYSg/r4u3uY9yyTlQRG97resFLPqhkNk4O5zf7A.W', 'USER', 'true', null),
+                       (6, 'Kazimierz', 'Nowak','user6', 'kazio@gmail.com', '$2a$10$qM7cnRGWq4cfSpje9uYN5eRqsbafOw2h5Z1.731Kq.MTsoqySiXCi', 'USER', 'true', null),
+                       (7, 'Wacław', 'Wiszniewski','user7', 'waclaw@gmail.com', '$2a$10$LLb7Q3sZDnY2jFiHvYnTcepnwFv7l1qRoDqEgSwlO5ThYJVxjxrZu', 'USER', 'true', null),
+                       (8, 'Aleksandra', 'Rompa','user8', 'ola@gmail.com', '$2a$10$3cBvipiCT3D2muWslEulMep1yBkAFGNdigS76PM4fCPj3tnooaazC', 'USER', 'true', null),
+                       (9, 'Helena', 'Cieślak','user9', 'helena@gmail.com', '$2a$10$tzMbUYNLMOV.UhmPve/wLuK/E2leUqptDOlbDp1t41sge22Z2QF2O', 'USER', 'true', null),
+                       (10, 'Jakub', 'Golec','user0', 'jakub@gmail.com', '$2a$10$35YTjnCVI7BVJn83IGkIhO8gkuOpUVRXC0Hxq.UMAhUzLsp8Ds5Xm', 'USER', 'true', null);
 
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (1, 'Marek', 'Zawada', 'marek@gmail.com', '111111111');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (2, 'Tomek', 'Mazur', 'tomek@gmail.com', '222222222');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (3, 'Maria', 'Topola', 'maria@gmail.com', '333333333');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (4, 'Kazimierz', 'Nowak', 'kazio@gmail.com', '444444444');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (5, 'Wacław', 'Wiszniewski', 'waclaw@gmail.com', '555555555');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (6, 'Aleksandra', 'Rompa', 'ola@gmail.com', '666666666');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (7, 'Helena', 'Cieślak', 'helena@gmail.com', '777777777');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (8, 'Jakub', 'Golec', 'jakub@gmail.com', '888888888');
-INSERT INTO instructors (id, first_name, last_name, email, phone_number) VALUES (9, 'Błażej', 'Sęk', 'blazi@gmail.com', '999999999');
+INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (1, 'StreetName1', '11', '11-111', 1, 1);
+INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (3, 'StreetName3', '13', '31-111', 3, 2);
+INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (5, 'StreetName5', '15', '51-111', 5, 3);
 
-INSERT INTO addresses (id, street, number, zipcode, city_id, instructor_id) VALUES (1, 'StreetName1', '11', '11-111', 1, 1);
-INSERT INTO addresses (id, street, number, zipcode, city_id, instructor_id) VALUES (3, 'StreetName3', '13', '31-111', 3, 2);
-INSERT INTO addresses (id, street, number, zipcode, city_id, instructor_id) VALUES (5, 'StreetName5', '15', '51-111', 5, 3);
-
-INSERT INTO gym_passes (id, type, expired_date, price, instructor_id, user_id) VALUES (1, 'Monthly', '2024-02-27', 100.00, 1, 1);
-INSERT INTO gym_passes (id, type, expired_date, price, instructor_id, user_id) VALUES (2, 'Weekly', '2024-02-27', 100.00, 2, 1);
-INSERT INTO gym_passes (id, type, expired_date, price, instructor_id, user_id) VALUES (3, 'For Seniors', '2024-02-27', 100.00, 3, 2);
+INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (1, 'Monthly', '2024-02-27', 100.00, 1);
+INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (2, 'Weekly', '2024-02-27', 100.00, 1);
+INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (3, 'For Seniors', '2024-02-27', 100.00, 2);
 
 INSERT INTO messages (content, timestamp, user_id) VALUES ('Hello, how are you?', '2024-02-27 14:35:50', 1);
 INSERT INTO messages (content, timestamp, user_id) VALUES ('This is a sample message.', '2024-02-28 09:15:00', 1);
