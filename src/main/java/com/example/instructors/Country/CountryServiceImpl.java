@@ -1,5 +1,6 @@
 package com.example.instructors.Country;
 
+import com.example.instructors.Components.Aspect.AdminOnly;
 import com.example.instructors.Country.dto.CountryRequest;
 import com.example.instructors.Country.dto.CountryResponse;
 import com.example.instructors.Entity.Country;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AdminOnly
 @RequiredArgsConstructor
 public class CountryServiceImpl implements CountryService {
 

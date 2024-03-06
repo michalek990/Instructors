@@ -15,9 +15,6 @@ public class GymPassResponse {
     private String type;
     private LocalDateTime expireDate;
     private BigDecimal price;
-    private String instructorFirstname;
-    private String instructorLastname;
-    private String instructorEmail;
     private String userFirstname;
     private String userLastname;
     private String userEmail;

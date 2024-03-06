@@ -1,5 +1,6 @@
 package com.example.instructors.GymPass;
 
+import com.example.instructors.Components.Aspect.InstructorOnly;
 import com.example.instructors.Entity.GymPass;
 import com.example.instructors.Entity.User;
 import com.example.instructors.Exception.NotFoundException;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@InstructorOnly
 @AllArgsConstructor
 public class GymPassServiceImpl implements GymPassService{
 

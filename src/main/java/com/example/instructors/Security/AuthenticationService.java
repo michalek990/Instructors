@@ -1,5 +1,6 @@
 package com.example.instructors.Security;
 
+import com.example.instructors.Address.AddressMapper;
 import com.example.instructors.Components.EmailService;
 import com.example.instructors.Entity.User;
 import com.example.instructors.Security.dto.AuthenticationRequest;
@@ -23,6 +24,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final EmailService emailService;
+    private final AddressMapper addressMapper;
 
     public AuthenticationResponse register(RegisterRequest request) {
         String verificationCode = UUID.randomUUID().toString();
@@ -35,7 +37,7 @@ public class AuthenticationService {
                 .verificationCode(verificationCode)
                 .active(false)
                 .roles(request.getRole())
-                .address(request.getAddress())
+                .address(addressMapper.mapToAddress(request.getAddress()))
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
         userRepository.save(user);

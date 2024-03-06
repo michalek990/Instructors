@@ -2,6 +2,7 @@ package com.example.instructors.City;
 
 import com.example.instructors.City.dto.CityRequest;
 import com.example.instructors.City.dto.CityResponse;
+import com.example.instructors.Components.Aspect.AdminOnly;
 import com.example.instructors.Country.CountryRepository;
 import com.example.instructors.Entity.City;
 import com.example.instructors.Entity.Country;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
+@AdminOnly
 @RequiredArgsConstructor
 public class CityServiceImpl implements CityService{
 
