@@ -15,7 +15,7 @@ Aplikacja "Instructors" to nowoczesne rozwiązanie zaprojektowane do zarządzani
 ## Endpoints
 
 Lista dostępnych endpointów API wraz z krótkimi opisami:
-
+## Address
 | Address             |Opis                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | PUT /addresses/{addressId} | Aktualizacja danych konkretnego adresu. |
@@ -23,28 +23,33 @@ Lista dostępnych endpointów API wraz z krótkimi opisami:
 | POST /addresses | Utworzenie nowego adresu.|
 | GET /addresses/all | Pobranie wszystkie adresy. |
 
+## Message
 | Message             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
 | POST /messages | Utworzenie nowej wiadomości. |
 | GET /messages/all    | Pobranie wszystkich wiadoności. |
 | GET /messages/all-by-user/{userId}    | Pobranie wszysktich wiadomości konkretnego użytkownika.|
 
+## Gym pass
 | Gym Pass             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
 | POST /gym-passes | Utworzenie nowego karnetu na siłownie. |
 | GET /gym-passes/{gymPassId}    | Pobranie konkretnego karnetu na siłownie. |
 | GET /gym-passes/all    | Pobranie wszystkich karnetów na siłownie.|
 
+## Country
 | Country             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
 | POST /countries | Utworzenie nowego kraju. |
 | GET /countries/all    | Pobranie wszystkich krajów. |
 
+## City
 | City             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
 | POST /cities | Utworzenie nowego miasta |
 | GET /cities/all    | Pobranie wszystkich miast. |
 
+## Authorization
 | Security             |Opis                                                                |
 | ------------------- | ------------------------------------------------------------------ |
 | POST /auth/register | Rejestracja nowego użytkownika. |
