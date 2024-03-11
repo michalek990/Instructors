@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+    <link rel="stylesheet" href="pdf.css" type="text/css" />
+    <title>Raport PDF</title>
+</head>
+<body>
+<header>
+    <h1>Raport danych</h1>
+</header>
+<section>
+    <h2>Podsumowanie</h2>
+    <p>Tutaj wprowadź podsumowanie swojego raportu...</p>
+</section>
+<section>
+    <h2>Szczegółowe dane</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Wartość</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Tutaj wstaw wiersze tabeli z danymi -->
+        <tr>
+            <td>1</td>
+            <td>Dane 1</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Dane 2</td>
+            <td>200</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>Raport wygenerowany dnia: [data]</p>
+</footer>
+</body>
+</html>
