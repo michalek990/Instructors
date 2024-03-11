@@ -1,6 +1,6 @@
 package com.example.instructors.City;
 
-import com.example.instructors.entity.City;
+import com.example.instructors.Entity.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

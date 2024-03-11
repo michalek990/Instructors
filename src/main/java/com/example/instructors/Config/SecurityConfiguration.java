@@ -1,6 +1,6 @@
 package com.example.instructors.Config;
 
-import com.example.instructors.security.JwtAuthenticationFilter;
+import com.example.instructors.Security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +21,8 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors()
+                .and()
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
