@@ -3,6 +3,7 @@ DELETE FROM cities;
 DELETE FROM countries;
 DELETE FROM gym_passes;
 DELETE FROM messages;
+DELETE FROM invoices;
 DELETE FROM users;
 
 INSERT INTO countries (id, name) VALUES (1, 'Hiszapnia');
@@ -33,9 +34,11 @@ INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (1,
 INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (3, 'StreetName3', '13', '31-111', 3, 2);
 INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (5, 'StreetName5', '15', '51-111', 5, 3);
 
-INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (1, 'Monthly', '2024-02-27', 100.00, 1);
-INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (2, 'Weekly', '2024-02-27', 100.00, 1);
-INSERT INTO gym_passes (id, type, expired_date, price, user_id) VALUES (3, 'For Seniors', '2024-02-27', 100.00, 2);
+INSERT INTO invoices (id, amount, invoice_date, invoice_number, customer_id) VALUES (1, 300.00, '2024-02-27', 1, 3);
+
+INSERT INTO gym_passes (id, type, expired_date, price, invoice_id, user_id) VALUES (1, 'Monthly', '2024-02-27', 100.00, 1, 3);
+INSERT INTO gym_passes (id, type, expired_date, price, invoice_id, user_id) VALUES (2, 'Weekly', '2024-02-27', 100.00, 1, 3);
+INSERT INTO gym_passes (id, type, expired_date, price, invoice_id, user_id) VALUES (3, 'For Seniors', '2024-02-27', 100.00, 1, 3);
 
 INSERT INTO messages (content, timestamp, user_id) VALUES ('Hello, how are you?', '2024-02-27 14:35:50', 1);
 INSERT INTO messages (content, timestamp, user_id) VALUES ('This is a sample message.', '2024-02-28 09:15:00', 1);

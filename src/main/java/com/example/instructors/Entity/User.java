@@ -59,6 +59,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<GymPass> gymPasses;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Invoice> invoicesAsCustomer;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(roles.name()));

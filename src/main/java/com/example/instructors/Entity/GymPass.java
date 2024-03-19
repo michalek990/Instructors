@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "gym_passes")
@@ -31,4 +32,8 @@ public class GymPass {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
+    private Invoice invoice;
 }
