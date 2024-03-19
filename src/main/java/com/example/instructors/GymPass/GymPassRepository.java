@@ -11,4 +11,5 @@ import java.util.List;
 public interface GymPassRepository extends JpaRepository<GymPass, Long> {
     @Query("SELECT gp FROM GymPass gp WHERE gp.expireDate <= CURRENT_DATE")
     List<GymPass> findEndingGymPasses();
+    List<GymPass> getAllByUserId(Long userId);
 }

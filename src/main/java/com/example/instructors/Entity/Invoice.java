@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "invoices")
@@ -31,14 +32,9 @@ public class Invoice {
     private BigDecimal amount;
 
     @ManyToOne
-    @JoinColumn(name = "instructor_id", referencedColumnName = "id")
-    private User instructor;
-
-    @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private User customer;
 
-    @ManyToOne
-    @JoinColumn(name = "gym_pass_id", referencedColumnName = "id")
-    private GymPass gymPass;
+    @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
+    private List<GymPass> gymPasses;
 }

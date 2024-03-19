@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class InvoiceRequest {
     private String invoiceNumber;
     private LocalDateTime invoiceDate;
-    private BigDecimal amount;
     private String CustomerFirstname;
     private String CustomerLastname;
 }

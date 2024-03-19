@@ -33,6 +33,7 @@ public class GymPass {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "gymPass", cascade = CascadeType.ALL)
-    private List<Invoice> invoices;
+    @ManyToOne
+    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
+    private Invoice invoice;
 }

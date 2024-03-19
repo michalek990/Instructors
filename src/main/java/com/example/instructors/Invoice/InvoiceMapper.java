@@ -16,8 +16,5 @@ public interface InvoiceMapper {
     @Mapping(target = "customerFirstname", source = "customer.firstname")
     @Mapping(target = "customerLastname", source = "customer.lastname")
     @Mapping(target = "customerEmail" , source = "customer.email")
-    @Mapping(target = "instructorFirstname", source = "instructor.firstname")
-    @Mapping(target = "instructorLastname", source = "instructor.lastname")
-    @Mapping(target = "instructorEmail", source = "instructor.email")
     InvoiceResponse mapToResponse(Invoice invoice);
 }

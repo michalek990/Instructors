@@ -1,59 +1,57 @@
 package com.example.instructors.Document;
 
-import com.example.instructors.City.CityMapper;
-import com.example.instructors.City.CityRepository;
-import com.example.instructors.City.dto.CityResponse;
+import com.example.instructors.Entity.User;
+import com.example.instructors.Invoice.InvoiceService;
+import com.example.instructors.Invoice.dto.InvoiceResponse;
+import com.example.instructors.User.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.ByteArrayOutputStream;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class ExportDataService {
 
     private final ResourceLoader resourceLoader;
-    private final CityRepository cityRepository; // Załóżmy, że takie repozytorium istnieje
-    private final CityMapper cityMapper;
-
+    private final InvoiceService invoiceService;
+    private final UserService userService;
     public byte[] generatePdf() throws Exception {
-        // Pobierz dane z bazy danych
-        List<CityResponse> cities = cityRepository.findAll().stream().map(cityMapper::mapToResponse).collect(Collectors.toList());
-
-        // Wczytaj szablon HTML jako String
+        User loggedUser = (User) userService.getLoggedUser();
         Resource resource = resourceLoader.getResource("classpath:templates/pdf.html");
+
         String htmlContent = new String(Files.readAllBytes(Paths.get(resource.getURI())));
+        htmlContent = htmlContent.replace("<!--{date}-->", new SimpleDateFormat("dd.MM.yyyy").format(Calendar.getInstance().getTime()));
+        htmlContent = htmlContent.replace("<!--{customerFirstname}-->", loggedUser.getFirstname());
+        htmlContent = htmlContent.replace("<!--{customerLastname}-->", loggedUser.getLastname());
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM");
-        String currentMonth = dateFormat.format(Calendar.getInstance().getTime());
-
-        htmlContent = htmlContent.replace("    <title>Raport za miesiąc {miesiac}</title>\n", currentMonth);
-        StringBuilder rows = new StringBuilder();
-        for (CityResponse city : cities) {
-            rows.append("<tr>")
-                    .append("<td>").append(city.getId()).append("</td>")
-                    .append("<td>").append(city.getName()).append("</td>")
+        List<InvoiceResponse> invoices = invoiceService.getAllByUserUsername(loggedUser.getUsername());
+        BigDecimal totalAmount = invoices.stream().map(InvoiceResponse::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
+        StringBuilder invoiceRows = new StringBuilder();
+        for (InvoiceResponse invoice : invoices) {
+            invoiceRows.append("<tr>")
+                    .append("<td>").append(invoice.getInvoiceNumber()).append("</td>")
+                    .append("<td>").append(invoice.getInvoiceDate()).append("</td>")
+                    .append("<td>").append(invoice.getAmount()).append("$</td>")
                     .append("</tr>");
         }
-        htmlContent = htmlContent.replace("<!-- Tutaj wstaw wiersze tabeli z danymi -->", rows.toString());
+        htmlContent = htmlContent.replace("<!--{faktury}-->", invoiceRows.toString());
+        htmlContent = htmlContent.replace("<!--{totalAmount}-->", totalAmount.toString());
 
-        // Utwórz PDF
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ITextRenderer renderer = new ITextRenderer();
         renderer.setDocumentFromString(htmlContent);
         renderer.layout();
         renderer.createPDF(outputStream);
-        outputStream.close();
 
         return outputStream.toByteArray();
     }
