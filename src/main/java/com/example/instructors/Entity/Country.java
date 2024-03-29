@@ -1,9 +1,7 @@
 package com.example.instructors.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -11,7 +9,9 @@ import java.util.List;
 @Table(name = "countries")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Country {
 
     @Id
