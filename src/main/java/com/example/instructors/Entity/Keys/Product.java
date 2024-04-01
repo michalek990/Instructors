@@ -1,28 +1,23 @@
-package com.example.instructors.Entity;
+package com.example.instructors.Entity.Keys;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.redis.core.RedisHash;
 
-@Entity
-@Table(name = "products")
+import java.io.Serializable;
+
+@RedisHash("products")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Product implements Serializable {
 
     @Id
     private String id;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "price")
     private double price;
 }

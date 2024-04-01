@@ -1,6 +1,6 @@
 package com.example.instructors.Product;
 
-import com.example.instructors.Entity.Product;
+import com.example.instructors.Entity.Keys.Product;
 import com.example.instructors.Exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
-
 
     @Override
     public Product createProduct(Product product) {

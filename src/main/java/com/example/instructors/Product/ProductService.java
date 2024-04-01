@@ -1,6 +1,6 @@
 package com.example.instructors.Product;
 
-import com.example.instructors.Entity.Product;
+import com.example.instructors.Entity.Keys.Product;
 
 public interface ProductService {
     Product createProduct(Product product);
