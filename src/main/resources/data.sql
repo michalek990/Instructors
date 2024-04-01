@@ -5,6 +5,12 @@ DELETE FROM gym_passes;
 DELETE FROM messages;
 DELETE FROM invoices;
 DELETE FROM users;
+DELETE FROM products;
+
+INSERT INTO products (id, name, price) VALUES ('1', 'Produkt 1', 19.99);
+INSERT INTO products (id, name, price) VALUES ('2', 'Produkt 2', 29.99);
+INSERT INTO products (id, name, price) VALUES ('3', 'Produkt 3', 39.99);
+INSERT INTO products (id, name, price) VALUES ('4', 'Produkt 4', 49.99);
 
 INSERT INTO countries (id, name) VALUES (1, 'Hiszapnia');
 INSERT INTO countries (id, name) VALUES (2, 'Francja');

@@ -9,7 +9,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/instructorsDb
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: 5520
+      SPRING_DATASOURCE_PASSWORD: postgres
 
   db:
     image: postgres:latest
@@ -18,4 +18,4 @@ services:
     environment:
       POSTGRES_DB: instructorsDb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 5520
+      POSTGRES_PASSWORD: postgres
