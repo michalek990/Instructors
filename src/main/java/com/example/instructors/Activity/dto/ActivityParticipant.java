@@ -1,4 +1,4 @@
-package com.example.instructors.Class.dto;
+package com.example.instructors.Activity.dto;
 
 import com.example.instructors.Entity.Activity;
 import com.example.instructors.Entity.User;

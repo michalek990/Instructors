@@ -1,4 +1,4 @@
-package com.example.instructors.Class.dto;
+package com.example.instructors.Activity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
