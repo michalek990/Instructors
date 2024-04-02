@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -61,6 +62,13 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Invoice> invoicesAsCustomer;
+
+    @OneToMany(mappedBy = "instructor")
+    private Set<Class> taughtClasses;
+
+    @ManyToMany(mappedBy = "participants")
+    private Set<Class> attendedClasses;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
