@@ -64,10 +64,10 @@ public class User implements UserDetails {
     private List<Invoice> invoicesAsCustomer;
 
     @OneToMany(mappedBy = "instructor")
-    private Set<Class> taughtClasses;
+    private List<Activity> taughtClasses;
 
     @ManyToMany(mappedBy = "participants")
-    private Set<Class> attendedClasses;
+    private Set<Activity> attendedClasses;
 
 
     @Override

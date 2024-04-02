@@ -10,15 +10,14 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-@Table(name = "classes")
+@Table(name = "activities")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Class {
+public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "name", nullable = false)
@@ -39,12 +38,8 @@ public class Class {
 
     @ManyToMany
     @JoinTable(
-            name = "class_participants",
-            joinColumns = @JoinColumn(name = "class_id"),
+            name = "activity_participants",
+            joinColumns = @JoinColumn(name = "activity_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> participants;
-
-    @OneToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
 }
