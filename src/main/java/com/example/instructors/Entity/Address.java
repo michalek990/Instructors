@@ -31,5 +31,9 @@ public class Address {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;;
+    private User user;
+
+    @OneToOne
+    @JoinColumn(name = "gym_id")
+    private Gym gym;
 }
