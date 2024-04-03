@@ -44,10 +44,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role roles;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Address address;
-
     @Column(name = "isActive")
     private boolean active = false;
 
@@ -68,6 +64,10 @@ public class User implements UserDetails {
 
     @ManyToMany(mappedBy = "participants")
     private Set<Activity> attendedClasses;
+
+    @ManyToOne
+    @JoinColumn(name = "gym_id")
+    private Gym gym;
 
 
     @Override

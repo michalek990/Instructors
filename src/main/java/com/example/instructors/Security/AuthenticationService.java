@@ -37,7 +37,6 @@ public class AuthenticationService {
                 .verificationCode(verificationCode)
                 .active(false)
                 .roles(request.getRole())
-                .address(addressMapper.mapToAddress(request.getAddress()))
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
         userRepository.save(user);

@@ -11,5 +11,7 @@ public class AddressRequest {
     private String street;
     private String number;
     private String zipcode;
-    private Long cityId;
+    private String latitude;
+    private String longitude;
+    private String cityName;
 }

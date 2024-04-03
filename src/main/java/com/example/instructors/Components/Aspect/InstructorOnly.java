@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE) // Adnotacja może być stosowana tylko do metod
+@Retention(RetentionPolicy.RUNTIME) // Adnotacja dostępna w czasie działania programu
 public @interface InstructorOnly {
 }
