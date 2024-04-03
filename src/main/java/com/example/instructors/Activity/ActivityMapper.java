@@ -1,6 +1,6 @@
-package com.example.instructors.Class;
+package com.example.instructors.Activity;
 
-import com.example.instructors.Class.dto.*;
+import com.example.instructors.Activity.dto.*;
 import com.example.instructors.Entity.Activity;
 import com.example.instructors.Entity.User;
 import org.mapstruct.Mapper;

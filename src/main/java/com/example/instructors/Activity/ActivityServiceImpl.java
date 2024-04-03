@@ -1,10 +1,10 @@
-package com.example.instructors.Class;
+package com.example.instructors.Activity;
 
-import com.example.instructors.Class.dto.ActivityParticipant;
-import com.example.instructors.Class.dto.ActivityRequest;
-import com.example.instructors.Class.dto.ActivityResponse;
-import com.example.instructors.Class.dto.AddParticipantResponse;
-import com.example.instructors.Class.dto.ParticipantsOfActivityResponse;
+import com.example.instructors.Activity.dto.ActivityParticipant;
+import com.example.instructors.Activity.dto.ActivityRequest;
+import com.example.instructors.Activity.dto.ActivityResponse;
+import com.example.instructors.Activity.dto.AddParticipantResponse;
+import com.example.instructors.Activity.dto.ParticipantsOfActivityResponse;
 import com.example.instructors.Entity.Activity;
 import com.example.instructors.Entity.User;
 import com.example.instructors.Exception.NotFoundException;
