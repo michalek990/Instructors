@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "gyms")
 @Getter
@@ -28,6 +30,9 @@ public class Gym {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "description")
+    private String description;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "day_of_week")
     private DayOfWeek dayOfWeek;
@@ -38,7 +43,9 @@ public class Gym {
     @Column(name = "close_hour")
     private String closingHours;
 
-    @OneToOne
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL)
+    private List<User> instructors;
 }

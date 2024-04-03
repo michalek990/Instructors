@@ -33,6 +33,7 @@ INSERT INTO activities (id, name, description, date, number_of_participants, ins
          (3,'Swimming Lessons', 'Learn to swim or improve your technique', '2023-04-03 09:00:00', 10, 3),
          (4,'Cycling Marathon', 'Join our long-distance cycling event', '2023-04-04 07:00:00', 30, 3),
          (5,'Pilates Class', 'Improve your strength and flexibility', '2023-04-05 11:00:00', 25, 2);
+
 INSERT INTO activity_participants (activity_id, user_id) VALUES
         (1, 6),
         (1, 7),
@@ -41,9 +42,29 @@ INSERT INTO activity_participants (activity_id, user_id) VALUES
         (2, 10),
         (3, 10);
 
-INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (1, 'StreetName1', '11', '11-111', 1);
-INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (3, 'StreetName3', '13', '31-111', 3);
-INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (5, 'StreetName5', '15', '51-111', 5);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (1,'Main Street', '123', '00000', '40.712776', '-74.005974', 1);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (2,'Second Street', '456', '11111', '34.052235', '-118.243683', 2);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (3,'Third Street', '789', '22222', '41.878113', '-87.629799', 3);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (4,'Fourth Street', '101', '33333', '51.507351', '-0.127758', 4);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (5,'Fifth Street', '202', '44444', '48.856613', '2.352222', 5);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (6,'Sixth Street', '303', '55555', '38.722252', '-9.139337', 2);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (7,'Seventh Street', '404', '66666', '52.520007', '13.404954', 3);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (8,'Eighth Street', '505', '77777', '52.229676', '21.012229', 4);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (9,'Ninth Street', '606', '88888', '52.406374', '16.925168', 5);
+INSERT INTO addresses (id,street, number, zipcode, latitude, longitude, city_id) VALUES (10,'Tenth Street', '707', '99999', '37.774929', '-122.419416', 1);
+
+INSERT INTO gyms (id,name, phone_number, email, description, day_of_week, open_hour, close_hour, address_id) VALUES
+        (1,'Gym A', '123-456-7890', 'contact@gyma.com', 'Full-service fitness center', 'MONDAY_TO_FRIDAY', '06:00', '22:00', 1),
+        (2,'Gym B', '123-456-7891', 'contact@gymb.com', 'Community fitness hub', 'MONDAY_TO_FRIDAY', '05:00', '23:00', 2),
+        (3,'Gym C', '123-456-7892', 'contact@gymc.com', 'Elite athletic training facility', 'MONDAY_TO_FRIDAY', '06:00', '21:00', 3),
+        (4,'Gym D', '123-456-7893', 'contact@gymd.com', 'High-energy group classes', 'MONDAY_TO_SUNDAY', '07:00', '20:00', 4),
+        (5,'Gym E', '123-456-7894', 'contact@gyms.com', 'Yoga and wellness studio', 'MONDAY_TO_SUNDAY', '06:00', '22:00', 5),
+        (6,'Gym F', '123-456-7895', 'contact@gymf.com', 'State-of-the-art weightlifting gym', 'MONDAY_TO_SUNDAY', '08:00', '18:00', 6),
+        (7,'Gym G', '123-456-7896', 'contact@gymg.com', 'Indoor cycling and spin studio', 'WEEKEND', '09:00', '15:00', 7),
+        (8,'Gym H', '123-456-7897', 'contact@gymh.com', 'Modern Pilates studio', 'MONDAY_TO_SUNDAY', '06:00', '21:00', 8),
+        (9,'Gym I', '123-456-7898', 'contact@gymi.com', 'Martial arts and boxing gym', 'MONDAY_TO_SUNDAY', '07:00', '22:00', 9),
+        (10,'Gym J', '123-456-7899', 'contact@gymj.com', 'Outdoor and adventure sports training', 'MONDAY_TO_FRIDAY', '06:00', '20:00', 10);
+
 
 INSERT INTO invoices (id, amount, invoice_date, invoice_number, customer_id) VALUES (1, 300.00, '2024-02-27', 1, 3);
 

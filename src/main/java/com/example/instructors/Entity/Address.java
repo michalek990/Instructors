@@ -35,7 +35,6 @@ public class Address {
     @JoinColumn(name = "city_id")
     private City city;
 
-    @OneToOne
-    @JoinColumn(name = "gym_id")
+    @OneToOne(mappedBy = "address")
     private Gym gym;
 }
