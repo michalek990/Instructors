@@ -1,13 +1,3 @@
-DELETE FROM addresses;
-DELETE FROM cities;
-DELETE FROM countries;
-DELETE FROM gym_passes;
-DELETE FROM messages;
-DELETE FROM invoices;
-DELETE FROM users;
-DELETE FROM activities;
-DELETE FROM products;
-
 INSERT INTO products (id, name, price) VALUES ('1', 'Produkt 1', 19.99);
 INSERT INTO products (id, name, price) VALUES ('2', 'Produkt 2', 29.99);
 INSERT INTO products (id, name, price) VALUES ('3', 'Produkt 3', 39.99);
@@ -37,13 +27,12 @@ INSERT INTO users (id, firstname, lastname, username, email, password, roles, is
                        (9, 'Helena', 'Cieślak','user9', 'helena@gmail.com', '$2a$10$tzMbUYNLMOV.UhmPve/wLuK/E2leUqptDOlbDp1t41sge22Z2QF2O', 'USER', 'true', null),
                        (10, 'Jakub', 'Golec','user0', 'jakub@gmail.com', '$2a$10$35YTjnCVI7BVJn83IGkIhO8gkuOpUVRXC0Hxq.UMAhUzLsp8Ds5Xm', 'USER', 'true', null);
 
-INSERT INTO activities (name, description, date, number_of_participants, instructor_id) VALUES
-        ('Yoga Class', 'A relaxing yoga session', '2023-04-01 10:00:00', 4, 2),
-        ('HIIT Workout', 'High-intensity interval training', '2023-04-02 08:00:00', 15, 2),
-        ('Swimming Lessons', 'Learn to swim or improve your technique', '2023-04-03 09:00:00', 10, 3),
-        ('Cycling Marathon', 'Join our long-distance cycling event', '2023-04-04 07:00:00', 30, 3),
-        ('Pilates Class', 'Improve your strength and flexibility', '2023-04-05 11:00:00', 25, 2);
-
+INSERT INTO activities (id, name, description, date, number_of_participants, instructor_id) VALUES
+         (1,'Yoga Class', 'A relaxing yoga session', '2023-04-01 10:00:00', 4, 2),
+         (2,'HIIT Workout', 'High-intensity interval training', '2023-04-02 08:00:00', 15, 2),
+         (3,'Swimming Lessons', 'Learn to swim or improve your technique', '2023-04-03 09:00:00', 10, 3),
+         (4,'Cycling Marathon', 'Join our long-distance cycling event', '2023-04-04 07:00:00', 30, 3),
+         (5,'Pilates Class', 'Improve your strength and flexibility', '2023-04-05 11:00:00', 25, 2);
 INSERT INTO activity_participants (activity_id, user_id) VALUES
         (1, 6),
         (1, 7),
@@ -52,9 +41,9 @@ INSERT INTO activity_participants (activity_id, user_id) VALUES
         (2, 10),
         (3, 10);
 
-INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (1, 'StreetName1', '11', '11-111', 1, 1);
-INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (3, 'StreetName3', '13', '31-111', 3, 2);
-INSERT INTO addresses (id, street, number, zipcode, city_id, user_id) VALUES (5, 'StreetName5', '15', '51-111', 5, 3);
+INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (1, 'StreetName1', '11', '11-111', 1);
+INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (3, 'StreetName3', '13', '31-111', 3);
+INSERT INTO addresses (id, street, number, zipcode, city_id) VALUES (5, 'StreetName5', '15', '51-111', 5);
 
 INSERT INTO invoices (id, amount, invoice_date, invoice_number, customer_id) VALUES (1, 300.00, '2024-02-27', 1, 3);
 
