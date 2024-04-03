@@ -25,13 +25,15 @@ public class Address {
     @Column(name = "zipcode")
     private String zipcode;
 
+    @Column(name = "latitude")
+    private String latitude;
+
+    @Column(name = "longitude")
+    private String longitude;
+
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 
     @OneToOne
     @JoinColumn(name = "gym_id")

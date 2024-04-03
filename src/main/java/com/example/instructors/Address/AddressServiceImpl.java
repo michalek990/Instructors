@@ -21,18 +21,18 @@ public class AddressServiceImpl implements AddressService{
     @Override
     public AddressResponse createNewAddress(AddressRequest addressRequest){
         Address address = addressMapper.mapToAddress(addressRequest);
-        address.setCity(cityRepository.findById(addressRequest.getCityId())
-                .orElseThrow(() -> new NotFoundException("City not found with id " + addressRequest.getCityId())));
+        address.setCity(cityRepository.findByName(addressRequest.getCityName())
+                .orElseThrow(() -> new NotFoundException("City not found with id " + addressRequest.getCityName())));
         Address savedAddress = addressRepository.save(address);
         return addressMapper.mapToResponse(savedAddress);
     }
 
     @Override
-    public AddressResponse updateAddres(Long addressId, AddressRequest addressRequest) {
+    public AddressResponse updateAddress(Long addressId, AddressRequest addressRequest) {
         Address addressToUpdate = addressRepository.findById(addressId)
                 .orElseThrow(() -> new NotFoundException("Address not found with id " + addressId));
-        addressToUpdate.setCity(cityRepository.findById(addressRequest.getCityId())
-                .orElseThrow(() -> new NotFoundException("City not found with id " + addressRequest.getCityId())));
+        addressToUpdate.setCity(cityRepository.findByName(addressRequest.getCityName())
+                .orElseThrow(() -> new NotFoundException("City not found with id " + addressRequest.getCityName())));
         addressToUpdate.setNumber(addressRequest.getNumber());
         addressToUpdate.setStreet(addressRequest.getStreet());
         addressToUpdate.setZipcode(addressRequest.getZipcode());

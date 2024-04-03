@@ -8,9 +8,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class AddressResponse {
-    private Long addressId;
+    private Long id;
     private String street;
     private String number;
     private String zipcode;
+    private String latitude;
+    private String longitude;
     private Long cityId;
 }

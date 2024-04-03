@@ -13,6 +13,6 @@ public interface AddressMapper {
     Address mapToAddress(AddressRequest addressRequest);
 
     @Mapping(target = "cityId", source = "city.id")
-    @Mapping(target = "addressId", source = "id")
+    @Mapping(target = "id", source = "id")
     AddressResponse mapToResponse(Address address);
 }
