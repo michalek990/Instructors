@@ -48,4 +48,7 @@ public class Gym {
 
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL)
     private List<User> instructors;
+
+    @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL)
+    private List<GymReview> reviews;
 }

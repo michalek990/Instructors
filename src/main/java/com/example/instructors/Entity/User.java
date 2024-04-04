@@ -69,6 +69,8 @@ public class User implements UserDetails {
     @JoinColumn(name = "gym_id")
     private Gym gym;
 
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
+    private List<InstructorReview> reviews;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
